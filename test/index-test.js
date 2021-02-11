@@ -112,7 +112,7 @@ describe('Band Component with Redux', () => {
   it('updates the state of the store to remove the component', () => {
     const store = createStore(manageBand);
     const wrapper = mount(<Provider store={store}><App /></Provider>);
-
+ 
     let form = wrapper.find('form');
     let input = wrapper.find('input').first();
 
