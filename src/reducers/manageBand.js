@@ -1,6 +1,6 @@
 import uuid from "uuid";
 
-export default function manageBand(state = { bands: [{name: "The Strokes"}] }, action) {
+export default function manageBand(state = { bands: [] }, action) {
   
   switch (action.type) {
     case 'ADD_BAND':
@@ -16,7 +16,7 @@ export default function manageBand(state = { bands: [{name: "The Strokes"}] }, a
 
       const state = state.bands.filter(band => band.id !== action.payload)
 
-      return state;
+      return { state };
 
     default:
       return state;
