@@ -1,17 +1,15 @@
 import React, { Component } from 'react'
 import BandInput from './BandInput';
-import Band from './Band';
+import Bands from './Bands';
 
 import { connect } from 'react-redux'
 
 class BandsContainer extends Component {
 
-  renderBands = () => this.props.bands.map(band => <Band key={band.id} band={band} removeBand={this.props.removeBand} />)
-
   render() {
     return (
       <div>
-        {this.renderBands()}
+        <Bands bands={this.props.bands} removeBand={this.props.removeBand} />
         <BandInput addBand={this.props.addBand}/>
 
       </div>

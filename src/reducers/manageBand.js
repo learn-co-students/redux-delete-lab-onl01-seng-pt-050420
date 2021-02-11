@@ -11,12 +11,14 @@ export default function manageBand(state = {
         name: action.name
       }
 
+      console.log(band.id)
       return { ...state, bands: [...state.bands, band] };
 
       case 'REMOVE_BAND':
+        console.log(action.id)
 
-        return {bands: state.bands.filter(band => band.id !== action.id)};
-
+        const bands = state.bands.filter(band => band.id !== action.id)
+        return { bands }
     default:
       return state;
   }
