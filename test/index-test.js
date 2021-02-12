@@ -83,7 +83,8 @@ describe('Redux', () => {
     let ids = store.getState()
       .bands.map(band => band.id)
 
-    store.dispatch({type: 'DELETE_BAND', id: ids[1]})
+    console.log(ids)
+    store.dispatch({type: 'REMOVE_BAND', id: ids[1]})
 
     let bandNames = store.getState().bands.map(band => band.name)
 
